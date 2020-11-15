@@ -1,0 +1,170 @@
+/* =======================
+GOOGLE FONTS
+=========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+/* TABLE OF CONTENTS */
+
+/* =====================
+1. Global Styles
+2. Reused css components
+3. 
+4. 
+5. 
+6. 
+7. 
+====================== */
+
+/* =======================
+1. GLOBAL STYLES
+=========================*/
+
+:root {
+  --clr-primary: #dbbd6a;
+  --clr-primary-light: #b5bb98;
+  --clr-secondary: #436346;
+  --clr-tertiatry: #532f52;
+  --clr-red: #c44536;
+  --clr-grey: #4e4545;
+  --clr-grey-light: #eee;
+  --ff-primary: 'Libre Baskerville', serif;
+  --transition: all 0.4s linear;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: var(--clr-grey-light);
+}
+
+html {
+  color: black;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 400;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+.row {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* =======================
+2. RE-USED CSS COMPONENTS
+=========================*/
+
+.btn {
+  height: 2rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 5rem;
+  background-color: #a7c0e7;
+  margin-left: -1rem;
+  border: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #719ddf;
+  color: white;
+}
+
+/* =======================
+3. TO DO LIST
+=========================*/
+
+.outer-container {
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 10rem;
+  width: 90vh;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-container {
+  /* background-color: green; */
+}
+
+.alert-box {
+  width: 100%;
+  /* background-color: blue; */
+  margin-bottom: 0.75rem;
+  display: block;
+  height: 1.5rem;
+}
+
+.input-box {
+  width: 80%;
+  height: 2rem;
+  border-radius: 5px;
+  background-color: var(--clr-grey-light);
+  margin: 1rem auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: 1rem;
+  border: none;
+}
+
+.list-container {
+  text-align: center;
+}
+
+.list-item {
+  width: 90%;
+  background-color: pink;
+  display: relative;
+  height: 1.5rem;
+  margin: 0.5rem auto;
+}
+
+.list-item p,
+.list-item button {
+  display: inline-block;
+}
+
+.list-item p {
+  float: left;
+  text-transform: capitalize;
+}
+
+.edit-btn,
+.trash-btn {
+  background: transparent;
+  border-color: transparent;
+  font-size: 1rem;
+  float: right;
+  margin-left: 1rem;
+}
+
+.edit-btn {
+  color: green;
+}
+.trash-btn {
+  color: red;
+}
+
+.clear-btn {
+  background: none;
+  border-color: transparent;
+  font-size: 1rem;
+  color: rgb(235, 96, 96);
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
