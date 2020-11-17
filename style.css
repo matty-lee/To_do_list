@@ -91,7 +91,8 @@ html {
   background-color: white;
   margin: 0 auto;
   margin-top: 10rem;
-  width: 90vh;
+  width: 90%;
+  max-width: 800px;
   text-align: center;
   padding: 2rem;
   border-radius: 10px;
@@ -107,6 +108,18 @@ html {
   margin-bottom: 0.75rem;
   display: block;
   height: 1.5rem;
+  padding-top: 4px;
+  font-size: 0.9rem;
+  color: #1d1b1b;
+  border-radius: 5px;
+}
+
+.alert-red {
+  background-color: #ebaeae;
+}
+
+.alert-green {
+  background-color: #b4e7b4;
 }
 
 .input-box {
@@ -121,16 +134,25 @@ html {
   border: none;
 }
 
+.list {
+  visibility: hidden;
+}
+
+.show-list {
+  visibility: visible;
+}
+
 .list-container {
   text-align: center;
 }
 
 .list-item {
   width: 90%;
-  background-color: pink;
+  /* background-color: rgb(235, 224, 226); */
   display: relative;
   height: 1.5rem;
   margin: 0.5rem auto;
+  padding: 0 1rem;
 }
 
 .list-item p,
@@ -156,14 +178,14 @@ html {
   color: green;
 }
 .trash-btn {
-  color: red;
+  color: #e41212;
 }
 
 .clear-btn {
   background: none;
   border-color: transparent;
   font-size: 1rem;
-  color: rgb(235, 96, 96);
+  color: #eb6060;
   letter-spacing: 3px;
   cursor: pointer;
   margin-top: 1rem;
