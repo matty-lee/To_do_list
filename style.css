@@ -148,11 +148,10 @@ html {
 
 .list-item {
   width: 90%;
-  /* background-color: rgb(235, 224, 226); */
-  display: relative;
   height: 1.5rem;
   margin: 0.5rem auto;
   padding: 0 1rem;
+  border-radius: 5px;
 }
 
 .list-item p,
@@ -163,6 +162,7 @@ html {
 .list-item p {
   float: left;
   text-transform: capitalize;
+  padding-top: 3px;
 }
 
 .edit-btn,
@@ -172,6 +172,7 @@ html {
   font-size: 1rem;
   float: right;
   margin-left: 1rem;
+  cursor: pointer;
 }
 
 .edit-btn {

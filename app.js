@@ -1,8 +1,14 @@
 import getElement from './utils.js';
-import addItem from './addItem.js';
+import clearList from './clearList.js';
+import addItem from './addItem.js'
+import editDelete from './editDelete.js'
 
 const submitBtn = getElement('.submit-btn');
+const clearBtn = getElement('.clear-btn');
+const listContainer = getElement('.list-container');
 
 submitBtn.addEventListener('click', addItem);
+clearBtn.addEventListener('click', clearList);
+listContainer.addEventListener('click', editDelete);
 
 

@@ -8,6 +8,6 @@ function alert(message, color) {
   setTimeout(() => {
     alertBox.textContent = '';
     alertBox.classList.remove(`alert-${color}`);
-  }, 1200);
+  }, 1000);
 }
 export default alert;
