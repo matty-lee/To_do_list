@@ -1,6 +1,7 @@
 import getElement from './utils.js';
 import alert from './alert.js';
 import { editElement } from './editDelete.js';
+import resetForm from './resetForm.js';
 
 const inputBox = getElement('.input-box');
 const listContainer = getElement('.list-container');
@@ -20,14 +21,15 @@ function addItem(e) {
     <button class="edit-btn"><i class="fas fa-edit"></i></button>`;
     console.log(newItem);
     listContainer.appendChild(newItem);
-    inputBox.value = '';
+    resetForm();
     list.classList.add('show-list');
     alert('Added!', 'green');
   }
   if (inputBox.value != '' && submitBtn.textContent == 'Edit Item') {
     editElement.textContent = inputBox.value;
-    submitBtn.textContent = 'Submit';
-    // need to finish functionality here
+    editElement.parentElement.style.backgroundColor = `white`;
+    resetForm();
+    alert('Edited', 'green');
   }
 }
 
