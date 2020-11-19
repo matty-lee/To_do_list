@@ -2,11 +2,13 @@ import getElement from './utils.js';
 import alert from './alert.js';
 import { editElement } from './editDelete.js';
 import resetForm from './resetForm.js';
+import { setToStorage } from './localStorage.js';
 
 const inputBox = getElement('.input-box');
 const listContainer = getElement('.list-container');
 const list = getElement('.list');
 const submitBtn = getElement('.submit-btn');
+let id = 0;
 
 function addItem(e) {
   e.preventDefault();
@@ -14,16 +16,11 @@ function addItem(e) {
     alert('Please enter a task', 'red');
   }
   if (inputBox.value != '' && submitBtn.textContent == 'Submit') {
-    const newItem = document.createElement('div');
-    newItem.classList.add('list-item');
-    newItem.innerHTML = `<p class="item-text">${inputBox.value}</p>
-    <button class="trash-btn"><i class="fas fa-trash"></i></button>
-    <button class="edit-btn"><i class="fas fa-edit"></i></button>`;
-    console.log(newItem);
-    listContainer.appendChild(newItem);
-    resetForm();
-    list.classList.add('show-list');
+    id++;
+    createItem(id, inputBox.value);
     alert('Added!', 'green');
+    setToStorage(id, inputBox.value);
+    resetForm();
   }
   if (inputBox.value != '' && submitBtn.textContent == 'Edit Item') {
     editElement.textContent = inputBox.value;
@@ -31,6 +28,18 @@ function addItem(e) {
     resetForm();
     alert('Edited', 'green');
   }
+}
+
+export function createItem(id, value) {
+  const newItem = document.createElement('div');
+  newItem.classList.add('list-item');
+  newItem.setAttribute('data-id', id);
+  newItem.innerHTML = `<p class="item-text">${value}</p>
+    <button class="trash-btn"><i class="fas fa-trash"></i></button>
+    <button class="edit-btn"><i class="fas fa-edit"></i></button>`;
+  console.log(newItem);
+  listContainer.appendChild(newItem);
+  list.classList.add('show-list');
 }
 
 export default addItem;
