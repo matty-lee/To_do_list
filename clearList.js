@@ -12,6 +12,11 @@ const clearList = function () {
   list.classList.remove('show-list');
   submitBtn.textContent = 'Submit';
   resetForm();
+  let storage = JSON.parse(localStorage.getItem('list'));
+  console.log(storage);
+  storage = [];
+  console.log(storage);
+  localStorage.setItem('list', storage);
 };
 
 export default clearList;

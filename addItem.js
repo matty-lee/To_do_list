@@ -2,13 +2,13 @@ import getElement from './utils.js';
 import alert from './alert.js';
 import { editElement } from './editDelete.js';
 import resetForm from './resetForm.js';
-import { setToStorage } from './localStorage.js';
+import { setToStorage, editLocalStorage } from './localStorage.js';
 
 const inputBox = getElement('.input-box');
 const listContainer = getElement('.list-container');
 const list = getElement('.list');
 const submitBtn = getElement('.submit-btn');
-let id = 0;
+let id;
 
 function addItem(e) {
   e.preventDefault();
@@ -16,7 +16,7 @@ function addItem(e) {
     alert('Please enter a task', 'red');
   }
   if (inputBox.value != '' && submitBtn.textContent == 'Submit') {
-    id++;
+    const id = new Date().getTime().toString();;
     createItem(id, inputBox.value);
     alert('Added!', 'green');
     setToStorage(id, inputBox.value);
@@ -25,6 +25,9 @@ function addItem(e) {
   if (inputBox.value != '' && submitBtn.textContent == 'Edit Item') {
     editElement.textContent = inputBox.value;
     editElement.parentElement.style.backgroundColor = `white`;
+    const selectedID = editElement.parentElement.dataset.id;
+    const newText = editElement.textContent;
+    editLocalStorage(selectedID, newText);
     resetForm();
     alert('Edited', 'green');
   }
@@ -37,7 +40,6 @@ export function createItem(id, value) {
   newItem.innerHTML = `<p class="item-text">${value}</p>
     <button class="trash-btn"><i class="fas fa-trash"></i></button>
     <button class="edit-btn"><i class="fas fa-edit"></i></button>`;
-  console.log(newItem);
   listContainer.appendChild(newItem);
   list.classList.add('show-list');
 }

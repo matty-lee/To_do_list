@@ -12,3 +12,24 @@ export function getLocalStorage() {
     ? JSON.parse(localStorage.getItem('list'))
     : [];
 }
+
+export function editLocalStorage(id, value) {
+  let list = getLocalStorage();
+  list = list.map(function (item) {
+    if (item.id == id) {
+      item.value = value;
+    }
+    return item;
+  });
+  localStorage.setItem('list', JSON.stringify(list));
+}
+
+export function deleteLocalStorage(id) {
+  let list = getLocalStorage();
+  list = list.filter(function (item) {
+    if (item.id != id) {
+      return item;
+    }
+  });
+  localStorage.setItem('list', JSON.stringify(list));
+}
